@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Lost & Found Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.jsdelivr.net/npm/jsbarcode@3.11.0/dist/JsBarcode.all.min.js"></script>
+</head>
+<body>
+    <header>
+        <button onclick="window.location.href='index.html'" class="home-button">Home</button>
+        <button id="generateBarcode">Generate Barcode</button>
+
+        <div id="barcodeContainer" style="display: none;">
+            <svg id="barcode"></svg>
+        </div>
+    </header>
+    <main>
+        <div class="month-selector">
+            <button id="prevMonth">Previous Month</button>
+            <span id="currentMonth">Month Year</span>
+            <button id="nextMonth">Next Month</button>
+        </div>
+
+        <div class="calendar-grid">
+            <!-- Calendar days will be dynamically generated -->
+        </div>
+        <!-- Modal for adding/viewing notes -->
+        <div id="noteModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modalTitle">Add/View Note for Day X</h2>
+                <!-- Adding a label for the textarea -->
+                <label for="noteText" class="visually-hidden">Enter your note</label>
+                <textarea id="noteText" rows="4" aria-labelledby="modalTitle"></textarea>
+                <button id="saveNote">Save Note</button>
+            </div>
+        </div>
+    </main>
+    <script src="lost-found.js"></script>
+</body>
+</html>
